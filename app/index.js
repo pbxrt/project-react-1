@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import j from 'jquery'
+import foo from './foo'
 
 function component(){
 	//var element = document.createElement('div');

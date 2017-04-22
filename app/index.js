@@ -8,7 +8,7 @@ function component(){
 	/* lodash is required for the next line to work */
 	//element.innerHTML = _.join(['Hello','webpack'],' ');
 
-	element.html(_.join(['Hi','webpack'],' '))
+	element.html(_.join(['Hi','webpack,I am Plearner'],' '))
 	//return element
 	return element.get(0)
 }

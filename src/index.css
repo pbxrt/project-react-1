@@ -1,15 +1,9 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background: #3f4e8c;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: #ddd;
 }
 
-h1 {
-	font-size: 40px;
-	color: #fff;
+#root {
+	display: flex;
+	justify-content: center;
+	min-height: 100vh;
 }

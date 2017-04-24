@@ -1,0 +1,23 @@
+.TodoItem {
+	
+	display: flex;
+	height: 3em;
+	align-items: center;
+}
+.TodoItem>input {
+	width: 2em;
+	height: 2em;
+	margin-left: 1em;
+}
+.TodoItem>label {
+	font-size: 1.5em;
+	padding: .5em;
+	flex: 1;
+}
+.TodoItem>button {
+	outline:none;
+	border-radius: .2em;
+	font-size: 1em;
+	padding: .2em;
+	margin-right: 1em;
+}

@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://younger-peng.github.io/project-react-1/build",
   "dependencies": {
+    "leancloud-storage": "^2.2.1",
     "normalize.css": "^6.0.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"

@@ -5,15 +5,14 @@ import TodoInput from './TodoInput';
 import TodoItem from './TodoItem';
 import 'normalize.css'
 import './reset.css'
+import * as localStore from './localStore'
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
       newTodo: "",
-      todoList: [
-
-      ]
+      todoList: localStore.load("todoList") || []
     }
   }
   render() {
@@ -33,6 +32,7 @@ class App extends Component {
         <h1>我的代办</h1>
         <div className="inputWrapper">
           <TodoInput content={this.state.newTodo}
+            
             onChange={this.changeTitle.bind(this)}
             onSubmit={this.addTodo.bind(this)} />
         </div>
@@ -42,6 +42,11 @@ class App extends Component {
       </div>
     );
   }
+
+  componentDidUpdate(){
+    localStore.save("todoList",this.state.todoList)
+  }
+
   delete(event,todo){
     todo.deleted = true
     this.setState(this.state)

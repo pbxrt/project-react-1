@@ -5,7 +5,10 @@ import TodoInput from './TodoInput';
 import TodoItem from './TodoItem';
 import 'normalize.css'
 import './reset.css'
-import * as localStore from './localStore'
+
+import AV from './leanCloud.js'
+
+
 
 
 class App extends Component {
@@ -13,7 +16,7 @@ class App extends Component {
     super(props)
     this.state = {
       newTodo: "",
-      todoList: localStore.load("todoList") || []
+      todoList: []
     }
   }
   render() {
@@ -45,7 +48,7 @@ class App extends Component {
   }
 
   componentDidUpdate(){
-    localStore.save("todoList",this.state.todoList)
+    
   }
 
   delete(event,todo){

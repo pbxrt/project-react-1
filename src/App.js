@@ -5,7 +5,7 @@ import TodoInput from './TodoInput';
 import TodoItem from './TodoItem';
 import 'normalize.css'
 import './reset.css'
-
+import UserDialog from './UserDialog'
 import AV from './leanCloud.js'
 
 
@@ -43,6 +43,7 @@ class App extends Component {
         <ol className="todoList">
           {todos}
         </ol>
+        <UserDialog />
       </div>
     );
   }

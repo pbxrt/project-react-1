@@ -102,7 +102,20 @@ class App extends Component {
     let stateCopy = jsonDeepCopy.call(this)
     stateCopy.newTodo = ''
     stateCopy.todoList.push(newItem)
-    this.setState(stateCopy)
+    //将数据首先保存至leanCloud
+    this.saveDataToCloud.call(this,stateCopy)
+  }
+  saveDataToCloud(stateCopy){
+    let _this = this
+    let id = AV.User.current().get('todoListId')
+    let todo = AV.Object.createWithoutData('TodoList',id)
+    todo.set('todoList',stateCopy.todoList)
+    todo.save().then(function(todo){
+      //成功保存至leanCloud之后本地再更新state
+      _this.setState(stateCopy)
+    }, function(error){
+      console.log(error)
+    })
   }
 
 }

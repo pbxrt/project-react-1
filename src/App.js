@@ -27,6 +27,9 @@ class App extends Component {
       todoList:[]
     }
   }
+  componentWillMount(){
+    this.fetchData.call(this)
+  }
   render() {
      let todos = this.state.todoList
          .filter((item)=>!item.deleted)

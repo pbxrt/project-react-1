@@ -82,3 +82,5 @@ export function signOut(){
 export function jsonDeepCopy(){
 	return JSON.parse(JSON.stringify(this.state))
 }
+
+

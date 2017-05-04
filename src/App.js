@@ -95,12 +95,17 @@ class App extends Component {
   }
 
   delete(event,todo){
-    todo.deleted = true
-    this.setState(this.state)
+    let index = this.state.todoList.indexOf(todo)
+    let stateCopy = jsonDeepCopy.call(this)
+    stateCopy.todoList[index].deleted = true
+    this.saveDataToCloud.call(this,stateCopy)
   }
   toggle(e,todo){
-    todo.status = todo.status === 'completed' ? '' : 'completed'
-    this.setState(this.state)
+    let index = this.state.todoList.indexOf(todo)
+    let stateCopy = jsonDeepCopy.call(this)
+    let item = stateCopy.todoList[index]
+    item.status = item.status === 'completed' ? '' : 'completed'
+    this.saveDataToCloud.call(this,stateCopy)
   }
   changeTitle(event){
     this.setState({

@@ -7,6 +7,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background: rgba(0,0,0,.5);
 
 }
 
@@ -25,6 +26,10 @@
 	margin-left: 2em;
 	cursor: pointer;
 }
+.UserDialog>nav label input {
+	margin-right: .5em;
+}
+
 .UserDialog>.panes {
 	padding: 0 1em 1em;
 }
@@ -35,7 +40,9 @@
 .UserDialog form>.row>label:first-child {
 	width: 4em;
 }
-UserDialog form>.row.actions {
+.UserDialog form>.row.actions {
 	padding-left: 4em;
 }
-
+.UserDialog form>.row.actions button {
+	padding: .2em;
+}

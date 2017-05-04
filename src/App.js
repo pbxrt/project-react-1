@@ -1,23 +1,30 @@
 import React, { Component } from 'react';
-
 import './App.css';
 import TodoInput from './TodoInput';
 import TodoItem from './TodoItem';
 import 'normalize.css'
 import './reset.css'
 import UserDialog from './UserDialog'
-import {getCurrentUser, signOut} from './leanCloud'
+import AV, {getCurrentUser, signOut, jsonDeepCopy} from './leanCloud'
 
 
-
+// var Plearner = AV.Object.extend('Plearner')
+// var plearner = new Plearner()
+// plearner.set("todoList",[{id:1,title: "task1",status:null,deleted: false}])
+// plearner.save().then(function(todo){
+//   console.log(todo.id)
+//   save("plearner",todo.id)
+// },function(error){
+//   console.error(error)
+// })
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      user: getCurrentUser() || {},
+      user: getCurrentUser() || '',
       newTodo: "",
-      todoList: []
+      todoList:[]
     }
   }
   render() {
@@ -34,8 +41,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>{this.state.user.username||'我'}的代办
-          {this.state.user.id ? <button onClick={this.signOut.bind(this)}>登出</button> : null }</h1>
+        <h1>{this.state.user||'我'}的代办
+          {this.state.user ? <button onClick={this.signOut.bind(this)}>登出</button> : null }</h1>
         <div className="inputWrapper">
           <TodoInput content={this.state.newTodo}
             
@@ -45,26 +52,29 @@ class App extends Component {
         <ol className="todoList">
           {todos}
         </ol>
-        {this.state.user.id ? 
+        {this.state.user ? 
           null : 
-          <UserDialog onSignUp={this.onSignUpOrSignIn.bind(this)}
-          onSignIn={this.onSignUpOrSignIn.bind(this)} />}
+          <UserDialog onSignUp={this.onSignUpOrSignIn.bind(this,'signUp')}
+          onSignIn={this.onSignUpOrSignIn.bind(this,'signIn')}
+          />}
       </div>
     );
   }
-
-  componentDidUpdate(){
-    
-  }
-  onSignUpOrSignIn(user){
-    let stateCopy = JSON.parse(JSON.stringify(this.state))
-    stateCopy.user = user
-    this.setState(stateCopy)
+  onSignUpOrSignIn(key,user){
+    let stateCopy = jsonDeepCopy.call(this)
+    //得到该用户对象的username属性
+    stateCopy.user = user.get('username')
+    if(key === 'signUp'){
+      this.setState(stateCopy)
+    }else if(key === 'signIn'){
+      this.fetchData.call(this)
+    }
   }
   signOut(){
     signOut()
-    let stateCopy = JSON.parse(JSON.stringify(this.state))
-    stateCopy.user = {}
+    let stateCopy = jsonDeepCopy.call(this)
+    stateCopy.user = ''
+    stateCopy.todoList = []
     this.setState(stateCopy)
   }
 
@@ -83,24 +93,25 @@ class App extends Component {
     })
   }
   addTodo(event){
-    this.state.todoList.push({
+    let newItem = {
       id: idMaker(),
+      status:'',
       title: event.target.value,
-      status: null,
       deleted: false
-    })
-    this.setState({
-      newTodo: '',
-      todoList: this.state.todoList
-    })
+    }
+    let stateCopy = jsonDeepCopy.call(this)
+    stateCopy.newTodo = ''
+    stateCopy.todoList.push(newItem)
+    this.setState(stateCopy)
   }
+
 }
 
-export default App;
+  export default App;
 
-let id = 0
+  let id = 0
 
-function idMaker(){
-  id += 1
-  return id
-}
+  function idMaker(){
+    id += 1
+    return id
+  }

@@ -10,48 +10,57 @@ AV.init({
 export default AV
 
 export function signUp(username,password,successFn,errorFn){
-	//新建 AVUser 对象实例
-	var user = new AV.User()
-	//设置用户名
+	let user = new AV.User()
 	user.setUsername(username)
-	//设置密码
 	user.setPassword(password)
-	//设置邮箱
+	let currentUser = null
 	user.signUp().then(function(loginedUser){
-		console.log(loginedUser)
-		let user = getUserFromAVUser(loginedUser)
-		console.log(user)
-		successFn.call(null,user)
-	},function(error){
-		errorFn.call(null,error)
+		currentUser = loginedUser
+		//用户注册成功之后，在云端再创建一个TodoList的实例
+		return createTodoList.call(null)
+	}).then(function(todo){
+		//把创建的实例的id绑定到用户对象中
+		currentUser.set('todoListId',todo.id)
+		currentUser.save().then(function(loginedUser){
+		  //最后把用户对象交给回调函数
+			successFn.call(null,loginedUser)
+		}, function(error){
+			console.log(error)
+		})
 	})
-
 	return undefined
 }
+
+export function createTodoList(){
+	let TodoList = AV.Object.extend('TodoList')
+	let todoList = new TodoList()
+	todoList.set('todoList',[])
+	return todoList.save()
+}
+
 
 export function getCurrentUser(){
 	let user = AV.User.current()
 	if(user){
-		return getUserFromAVUser(user)
+		return user.get('username')
 	}else{
 		return null
 	}
 }
+
 export function signIn(username,password,successFn,errorFn){
 	AV.User.logIn(username,password).then(function(loginedUser){
-		let user = getUserFromAVUser(loginedUser)
-		successFn.call(null,user)
+		successFn.call(null,loginedUser) 
 	}, function(error) {
 		errorFn.call(null,error)
 	})
 }
+
 export function signOut(){
 	AV.User.logOut()
 	return undefined
 }
-function getUserFromAVUser(AVUser){
-	return {
-		id: AVUser.id,
-		...AVUser.attributes
-	}
+
+export function jsonDeepCopy(){
+	return JSON.parse(JSON.stringify(this.state))
 }

@@ -15,9 +15,16 @@
 	flex: 1;
 }
 .TodoItem>button {
+	color: #ccc;
+	border: 1px solid #ccc;
 	outline:none;
-	border-radius: .2em;
+	border-radius: 3px;
+	background: rgba(0,0,0,0);
 	font-size: 1em;
 	padding: .2em;
 	margin-right: 1em;
+}
+.TodoItem>button:hover {
+	color: #fff;
+	cursor: pointer;
 }

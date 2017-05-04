@@ -1,9 +1,15 @@
+*::selection {
+	background-color: yellow;
+}
 body {
   background: #ddd;
+  font-family: Arial;
 }
 
 #root {
 	display: flex;
 	justify-content: center;
 	min-height: 100vh;
+	background: url(http://i1.piimg.com/567571/4aca1cb858387409.jpg) no-repeat center center;
+	background-size: cover;
 }

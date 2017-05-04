@@ -21,19 +21,11 @@ export default class UserDialog extends Component{
 	signUp(e){
 		e.preventDefault()
 		let {username,password} = this.state.formData
-		let success = (user)=>{
-			console.log("注册成功")		
+		let success = (user)=>{	
 			this.props.onSignUp.call(null,user)
 		}
 		let error = (error)=>{
-			switch(error.code){
-				case 202:
-					alert('用户名已被占用')
-					break
-				default:
-					alert(error)
-					break
-			}
+			console.error(error)
 		}
 		signUp(username,password,success,error)
 	}

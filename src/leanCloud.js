@@ -18,6 +18,24 @@ export function signUp(username,password,successFn,errorFn){
 		currentUser = loginedUser
 		//用户注册成功之后，在云端再创建一个TodoList的实例
 		return createTodoList.call(null)
+	}, function(error){
+			switch(error.code){
+				case 201:
+					alert('密码不能为空')
+					break
+				case 202:
+				  alert('用户名已被占用')
+				  break
+				case 217:
+					alert('用户名不能为空格')
+					break
+				case 218:
+					alert('密码不能为空')
+					break
+				default:
+					alert(error)
+					break
+			}
 	}).then(function(todo){
 		//把创建的实例的id绑定到用户对象中
 		currentUser.set('todoListId',todo.id)

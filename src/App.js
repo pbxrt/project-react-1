@@ -70,6 +70,19 @@ class App extends Component {
       this.fetchData.call(this)
     }
   }
+  fetchData(){
+    let stateCopy = jsonDeepCopy.call(this)
+    let user = AV.User.current()
+    stateCopy['user'] = user.get('username')
+    let id = user.get('todoListId')
+    let TodoList = AV.Object.extend('TodoList')
+    let todoList = new TodoList()
+    todoList.id = id
+    todoList.fetch().then((todo)=>{
+      stateCopy.todoList = todo.get('todoList')
+      this.setState(stateCopy)
+    })
+  }
   signOut(){
     signOut()
     let stateCopy = jsonDeepCopy.call(this)

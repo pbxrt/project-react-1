@@ -59,12 +59,14 @@
 	justify-content: center;
 }
 .UserDialog form>.row.actions button {
-	border: 1px solid #ccc;
+	border: 1px solid #666;
 	border-radius: 2px;
 	padding: .2em 3em;
+	background: transparent;
 }
 .UserDialog form>.row.actions button:hover {
 	color: white;
-	background: #555;
+	border: 1px solid #6491f5;
+	background: #6491f5;
 	cursor: pointer;
 }

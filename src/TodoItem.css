@@ -31,6 +31,7 @@
 	margin-right: 1em;
 }
 .TodoItem>button:hover {
-	color: #fff;
+	background: white;
+	color: #111;
 	cursor: pointer;
 }

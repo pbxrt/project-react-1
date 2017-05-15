@@ -17,12 +17,14 @@
 	display: block;
 	padding: 1em 0 .2em 0;
 	text-align: center;
-	font-size: 24px;
+	font-size: 36px;
 }
 .UserDialog{
 	border: 1px solid #aaa;
 	border-radius: 4px;
 	min-width: 20em;
+	min-height: 25em;
+	font-size: 15px;
 	background: rgba(255,255,255,.7);
 	box-shadow: 0 0 1em hsla(0,0%,0%,.35);
 }
@@ -39,6 +41,7 @@
 	cursor: pointer;
 }
 .UserDialog>nav label input {
+	padding: .3em 0;
 	margin-right: .5em;
 }
 
@@ -47,13 +50,19 @@
 }
 .UserDialog form>.row {
 	display: flex;
-	padding: .3em 0;
+	padding: 0.7em 0;
+	vertical-align: middle;
 }
 .UserDialog form>.row>label:first-child {
+	padding: 0.2em 0;
 	width: 4em;
 }
+.UserDialog form>.row>input {
+	padding: 0.3em;
+	outline: none;
+}
 .UserDialog form>.row>input:last-child {
-	width: 60%
+	width: 60%;
 }
 .UserDialog form>.row.actions {
 	justify-content: center;
@@ -69,4 +78,7 @@
 	border: 1px solid #6491f5;
 	background: #6491f5;
 	cursor: pointer;
+}
+.UserDialog form>.row a {
+	font-size: 12px;
 }

@@ -8,7 +8,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/*background: url(http://i2.muimg.com/519918/8eec9e40b398c29d.jpg) no-repeat center center;*/
+	background: url(https://cdn.pixabay.com/photo/2017/04/19/13/18/computer-2242276_960_720.jpg) no-repeat center center;
 	background-size: cover;
 
 }
@@ -16,18 +16,17 @@
 .UserDialog:before{
 	content: "Welcome";
 	display: block;
-	padding: 1em 0 .2em 0;
+	padding: 1.5em 0 .2em 0;
 	text-align: center;
 	font-size: 36px;
 }
 .UserDialog{
-	border: 1px solid #aaa;
+	/*border: 1px solid #aaa;*/
 	border-radius: 4px;
 	min-width: 20em;
 	min-height: 25em;
 	font-size: 15px;
-	background: url('dialog.jpg') no-repeat center center;
-	background-size: cover;
+	background: rgba(0,0,0,.3);
 	box-shadow: 0 0 1em hsla(0,0%,0%,.35);
 }
 .UserDialog>.signUpOrSignIn {

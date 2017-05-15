@@ -12,7 +12,7 @@ export default class SignInForm extends Component {
         </div>
         <div className="row">
           <label>密码</label>
-          <input type="text" value={this.props.formData.password}
+          <input type="password" value={this.props.formData.password}
             placeholder="Password"
             onChange={this.props.onChange.bind(null,"password")}  />
         </div>

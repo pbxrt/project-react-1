@@ -4,10 +4,11 @@
 	left: 0;
 	bottom: 0;
 	right: 0;
+	color: #fff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: url(http://i2.muimg.com/519918/8eec9e40b398c29d.jpg) no-repeat center center;
+	/*background: url(http://i2.muimg.com/519918/8eec9e40b398c29d.jpg) no-repeat center center;*/
 	background-size: cover;
 
 }
@@ -25,43 +26,50 @@
 	min-width: 20em;
 	min-height: 25em;
 	font-size: 15px;
-	background: rgba(255,255,255,.7);
+	background: url('dialog.jpg') no-repeat center center;
+	background-size: cover;
 	box-shadow: 0 0 1em hsla(0,0%,0%,.35);
 }
-.UserDialog>nav:first-child {
+.UserDialog>.signUpOrSignIn {
+	
+}
+.UserDialog nav:first-child {
 	padding: 1em;
 	margin-left: -2em;
 }
-.UserDialog>nav {
+.UserDialog nav {
 	display: flex;
 	justify-content: center;
 }
-.UserDialog>nav:first-child label {
+.UserDialog nav:first-child label {
 	margin-left: 2em;
 	cursor: pointer;
 }
-.UserDialog>nav label input {
+.UserDialog nav label input {
 	padding: .3em 0;
 	margin-right: .5em;
 }
 
-.UserDialog>.panes {
+.UserDialog .panes {
 	padding: 0 1em 1em;
 }
 .UserDialog form>.row {
 	display: flex;
 	padding: 0.7em 0;
-	vertical-align: middle;
 }
-.UserDialog form>.row>label:first-child {
+.forgotPassword h3 {
+	margin-top: 1em;
+	text-align: center;
+}
+.UserDialog form .row>label:first-child {
 	padding: 0.2em 0;
 	width: 4em;
 }
-.UserDialog form>.row>input {
+.UserDialog form .row>input {
 	padding: 0.3em;
 	outline: none;
 }
-.UserDialog form>.row>input:last-child {
+.UserDialog form .row>input:last-child {
 	width: 60%;
 }
 .UserDialog form>.row.actions {
@@ -70,7 +78,7 @@
 .UserDialog form>.row.actions button {
 	border: 1px solid #666;
 	border-radius: 2px;
-	padding: .2em 3em;
+	padding: .2em 1em;
 	background: transparent;
 }
 .UserDialog form>.row.actions button:hover {

@@ -1,30 +1,29 @@
-import React, {Component} from 'react';
+import React from 'react'
 
-export default class SignUpForm extends Component {
-  render(){
-    return (
-      <form className="signUp" onSubmit={this.props.onSubmit.bind(this)}>
+export default function(props){
+  return (
+      <form className="signUp" onSubmit={props.onSubmit.bind(null)}>
         <div className="row">
           <label>邮箱</label>
-          <input type="text" value={this.props.formData.email} 
-            onChange={this.props.onChange.bind(null,'email')} />
+          <input type="text" value={props.formData.email} 
+            placeholder="Email"
+            onChange={props.onChange.bind(null,'email')} />
         </div>
         <div className="row">
           <label>用户名</label>
-          <input type="text" value={this.props.formData.username}
+          <input type="text" value={props.formData.username}
             placeholder="Username"
-            onChange={this.props.onChange.bind(null, 'username')} />
+            onChange={props.onChange.bind(null, 'username')} />
         </div>
         <div className="row">
           <label>密码</label>
-          <input type="password" value={this.props.formData.password}
+          <input type="password" value={props.formData.password}
             placeholder="Password"
-            onChange={this.props.onChange.bind(null, 'password')} />
+            onChange={props.onChange.bind(null, 'password')} />
         </div>
         <div className="row actions">
           <button type="submit">注册</button>
         </div>
       </form>
     )
-  }
 }

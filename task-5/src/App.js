@@ -37,8 +37,9 @@ class App extends Component {
         <Menu user={this.state.user}
           onSignOut={this.signOut.bind(this)} />
         <main>
-          <h1>{this.state.user||'我'}的待办
-            {this.state.user ? <button onClick={this.signOut.bind(this)}>登出</button> : null }</h1>
+          <header>
+            {this.getDate.call(this)}
+          </header>
           <div className="inputWrapper">
             <TodoInput content={this.state.newTodo}
               
@@ -57,6 +58,10 @@ class App extends Component {
         
       </div>
     );
+  }
+  getDate(){
+    let d = new Date()
+    return d.getFullYear() + '年' + (d.getMonth() + 1) + '月' + d.getDate() + '日'
   }
   onSignUpOrSignIn(key,user){
     let stateCopy = jsonDeepCopy.call(this)

@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <svg xmlns="http://www.w3.org/2000/svg">
 <metadata>
-Created by FontForge 20120731 at Tue May 23 16:22:01 2017
+Created by FontForge 20120731 at Tue May 23 23:29:06 2017
  By admin
 </metadata>
 <defs>
@@ -37,5 +37,8 @@ t-29.5 0.5h-32l-45 128h-439l-44 -128h-29h-34q-20 0 -45 1q-25 0 -41 9.5t-25.5 23t
 t9.5 -10.5t21.5 -4h37h67h81h80h64h36q23 0 34 12t2 38q-5 13 -9.5 30.5t-9.5 34.5q-5 19 -11 39h-368zM336 498v228q0 11 2.5 23t10 21.5t20.5 15.5t34 6h188q31 0 51.5 -14.5t20.5 -52.5v-227h-327z" />
     <glyph glyph-name="ic_delete_sweep_24px" unicode="&#xe69b;" 
 d="M640 213h171v-85h-171v85zM640 555h299v-86h-299v86zM640 384h256v-85h-256v85zM128 128q0 -35 25 -60t60 -25h256q36 0 61 25t25 60v427h-427v-427zM597 683h-128l-42 42h-171l-43 -42h-128v-86h512v86z" />
+    <glyph glyph-name="ic_menu_user_" unicode="&#xe671;" 
+d="M450 692q-79 0 -135 -56t-56 -135t56 -135t135 -56t135 56t56 135t-56 135t-135 56zM736 78q-5 74 -42.5 136t-96.5 100q-66 -52 -147.5 -52t-147.5 52q-59 -38 -96 -100t-42 -136h572zM768 126h94v-47h-94v47zM730 269h132v-47h-132v47zM662 410h200v-48h-200v48z
+M699 562h163v-56h-163v56z" />
   </font>
 </defs></svg>

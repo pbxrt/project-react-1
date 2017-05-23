@@ -1,3 +1,15 @@
 .Menu {
-  
+  padding: 0;
+}
+.Menu>header {
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+}
+.Menu>header>i {
+  font-size: 30px;
+  vertical-align: middle;
+}
+.Menu>header>span {
+  font-size: 20px;
+  vertical-align: middle;
 }

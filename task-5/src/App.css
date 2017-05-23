@@ -10,6 +10,7 @@
   min-width: 57em;
   max-height: 100vh;
   margin-left: 1em;
+  padding-right: 1em;
   flex: 4;
   overflow: auto;
 }

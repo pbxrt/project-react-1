@@ -30,7 +30,7 @@
 .TodoItem:hover>button {
 	display: block;
 	border: none;
-	color: #777;
+	color: #b9b9b9;
 	outline:none;
 	font-size: 25px;
 	margin-right: 10px;

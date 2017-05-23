@@ -33,22 +33,25 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>{this.state.user||'我'}的待办
-          {this.state.user ? <button onClick={this.signOut.bind(this)}>登出</button> : null }</h1>
-        <div className="inputWrapper">
-          <TodoInput content={this.state.newTodo}
-            
-            onChange={this.changeTitle.bind(this)}
-            onSubmit={this.addTodo.bind(this)} />
-        </div>
-        <ol className="todoList">
-          {todos}
-        </ol>
-        {this.state.user ? 
-          null : 
-          <UserDialog onSignUp={this.onSignUpOrSignIn.bind(this,'signUp')}
-          onSignIn={this.onSignUpOrSignIn.bind(this,'signIn')}
-          />}
+        <main>
+          <h1>{this.state.user||'我'}的待办
+            {this.state.user ? <button onClick={this.signOut.bind(this)}>登出</button> : null }</h1>
+          <div className="inputWrapper">
+            <TodoInput content={this.state.newTodo}
+              
+              onChange={this.changeTitle.bind(this)}
+              onSubmit={this.addTodo.bind(this)} />
+          </div>
+            <ol className="todoList">
+              {todos}
+            </ol>
+            {this.state.user ? 
+              null : 
+              <UserDialog onSignUp={this.onSignUpOrSignIn.bind(this,'signUp')}
+              onSignIn={this.onSignUpOrSignIn.bind(this,'signIn')}
+            />}
+        </main>
+        
       </div>
     );
   }
@@ -137,9 +140,3 @@ class App extends Component {
 
   export default App;
 
-  // let id = 0
-
-  // function idMaker(){
-  //   id += 1
-  //   return id
-  // }

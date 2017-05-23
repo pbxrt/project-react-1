@@ -9,25 +9,25 @@
   min-height: 20em;
   min-width: 57em;
 }
-.App>h1 {
+.App>main>h1 {
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.App>h1>button {
+.App>main>h1>button {
   margin-left:1em;
   padding: .3em;
   cursor: pointer;
 }
-.App>h1>button:hover {
+.App>main>h1>button:hover {
   color: red;
 }
-.App> .todoList> li{
+.App>main> .todoList> li{
   color: #333;
   border-bottom: 1px solid #eee;
   transition: .2s all ease;
 }
-.App> .todoList> li:hover{
+.App>main> .todoList> li:hover{
   background: rgba(250,250,250,1);
 }

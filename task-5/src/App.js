@@ -5,6 +5,7 @@ import TodoItem from './TodoItem';
 import 'normalize.css'
 import './reset.css'
 import UserDialog from './UserDialog'
+import Menu from './Menu'
 import AV, {getCurrentUser, signOut, jsonDeepCopy} from './leanCloud'
 
 class App extends Component {
@@ -33,6 +34,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        <Menu />
         <main>
           <h1>{this.state.user||'我'}的待办
             {this.state.user ? <button onClick={this.signOut.bind(this)}>登出</button> : null }</h1>

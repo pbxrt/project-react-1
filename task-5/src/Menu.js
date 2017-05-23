@@ -17,10 +17,11 @@ export default class Menu extends Component {
           <span>{this.props.user}</span>
           <div className="user-info">
             <div className="row"><i className="icon iconfont icon-set"></i> 设置</div>
-            <div className="row logout"><i className="icon iconfont icon-dengchu"></i> 登出</div>
+            <div onClick={this.props.onSignOut.bind(null)} className="row logout"><i className="icon iconfont icon-dengchu"></i> 登出</div>
           </div>
         </header>
       </section>
     )
   }
+  
 }

@@ -1,5 +1,6 @@
 .Menu>.row:hover {
   background: rgba(250,250,250,1);
+  cursor: pointer;
 }
 .Menu>header {
   position: relative;

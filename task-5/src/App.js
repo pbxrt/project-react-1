@@ -34,7 +34,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Menu user={this.state.user} />
+        <Menu user={this.state.user}
+          onSignOut={this.signOut.bind(this)} />
         <main>
           <h1>{this.state.user||'我'}的待办
             {this.state.user ? <button onClick={this.signOut.bind(this)}>登出</button> : null }</h1>

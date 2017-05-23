@@ -25,9 +25,19 @@
   width: 90%;
   background: #fff;
   top: 40px;
+  padding: 10px 0;
   box-shadow: 0 0 3px rgba(0,0,0,0.25)
+}
+.Menu>header>.user-info>.row {
+  padding: 10px;
+}
+.Menu>header>.user-info>.row:hover {
+  background: rgba(250,250,250,1);
+  cursor: pointer;
 }
 .Menu>header:hover>.user-info {
   display: block;
-  
+}
+.logout {
+  color: #ff5e5e;
 }

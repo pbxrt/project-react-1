@@ -16,8 +16,8 @@ export default class Menu extends Component {
           <i className="icon iconfont icon-ic_menu_user_"></i>
           <span>{this.props.user}</span>
           <div className="user-info">
-            <div className="row">设置</div>
-            <div className="row">登出</div>
+            <div className="row"><i className="icon iconfont icon-set"></i> 设置</div>
+            <div className="row logout"><i className="icon iconfont icon-dengchu"></i> 登出</div>
           </div>
         </header>
       </section>

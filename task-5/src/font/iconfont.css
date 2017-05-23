@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1495553346192'); /* IE9*/
-  src: url('iconfont.eot?t=1495553346192#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1495553346192') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1495553346192') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1495553346192#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1495555876888'); /* IE9*/
+  src: url('iconfont.eot?t=1495555876888#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1495555876888') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1495555876888') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1495555876888#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -15,7 +15,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-set:before { content: "\e620"; }
+
 .icon-ic_delete_sweep_24px:before { content: "\e69b"; }
+
+.icon-dengchu:before { content: "\e67e"; }
 
 .icon-ic_menu_user_:before { content: "\e671"; }
 

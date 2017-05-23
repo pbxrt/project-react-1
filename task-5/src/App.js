@@ -109,7 +109,7 @@ class App extends Component {
   }
   addTodo(event){
     let newItem = {
-      id: idMaker(),
+      // id: idMaker(),
       status:'',
       title: event.target.value,
       deleted: false
@@ -137,9 +137,9 @@ class App extends Component {
 
   export default App;
 
-  let id = 0
+  // let id = 0
 
-  function idMaker(){
-    id += 1
-    return id
-  }
+  // function idMaker(){
+  //   id += 1
+  //   return id
+  // }

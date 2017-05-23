@@ -13,28 +13,29 @@
 	transition: .2s all ease;
 }
 .TodoItem>input:checked~label {
-	color: #ccc;
+	color: #777;
 	font-family: monospace;
 	text-decoration: line-through;
 	opacity: .5;
 }
 .TodoItem>label {
-	font-size: 1.5em;
+	font-size: 15px;
 	padding: .5em;
 	flex: 1;
 }
 .TodoItem>button {
-	color: #ccc;
-	border: 1px solid #ccc;
+	display: none;
+	background: transparent;
+}
+.TodoItem:hover>button {
+	display: block;
+	border: none;
+	color: #777;
 	outline:none;
-	border-radius: 3px;
-	background: rgba(0,0,0,0);
-	font-size: 1em;
-	padding: .2em;
-	margin-right: 1em;
+	font-size: 25px;
+	margin-right: 10px;
 }
 .TodoItem>button:hover {
-	background: white;
 	color: #111;
 	cursor: pointer;
 }

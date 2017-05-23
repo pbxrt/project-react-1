@@ -23,11 +23,11 @@
 .App>h1>button:hover {
   color: red;
 }
-.App> .todoList> li:nth-child(odd){
-  color: #fff;
-	background: rgba(0,0,10,.4);
-}
-.App > .todoList > li:nth-child(even){
-	background: transparent;
+.App> .todoList> li{
   color: #333;
+  border-bottom: 1px solid #eee;
+  transition: .2s all ease;
+}
+.App> .todoList> li:hover{
+  background: rgba(250,250,250,1);
 }

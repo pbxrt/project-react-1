@@ -6,7 +6,7 @@ export default class Manager extends Component {
     super(props)
     this.state = {
       showUserAccount: false,
-      username: 'Plearner'
+      username: ''
     }
   }
   render(){

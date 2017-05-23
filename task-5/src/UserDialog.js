@@ -25,6 +25,10 @@ export default class UserDialog extends Component{
 	signUp(e){
 		e.preventDefault()
 		let {email,username,password} = this.state.formData
+		let res = this.checkInfo.call(this,email,username,password)
+		if(!res) {
+			return
+		}
 		let success = (user)=>{	
 			this.props.onSignUp.call(null,user)
 		}
@@ -33,7 +37,25 @@ export default class UserDialog extends Component{
 		}
 		signUp(email,username,password,success,error)
 	}
-
+	checkInfo(email,username,password){
+		let regE = /@/
+		let regU = /\w{3,}/
+		let regP = /\w{6,}/
+		if(!regE.test(email)){
+			this.toast('邮箱必须包含@')
+			return false
+		}else if(!regU.test(username)){
+			this.toast('用户名至少包含三个字符')
+			return false
+		}else if(!regP.test(password)){
+			this.toast('密码不能少于6个字符')
+			return false
+		}
+		return true
+	}
+	toast(message){
+		alert(message)
+	}
 	signIn(e){
 		e.preventDefault()
 		let {username,password} = this.state.formData

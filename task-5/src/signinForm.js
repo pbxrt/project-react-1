@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-export default class SignInForm extends Component {
-  render(){
-    return (
+export default function(props) {
+  return (
       <form className="signIn" onSubmit={this.props.onSubmit.bind(null)}>
         <div className="row">
           <label>用户名</label>
@@ -24,5 +23,4 @@ export default class SignInForm extends Component {
         </div>
       </form>
     )
-  }
 }

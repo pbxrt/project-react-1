@@ -12,11 +12,13 @@ export default class SignUpForm extends Component {
         <div className="row">
           <label>用户名</label>
           <input type="text" value={this.props.formData.username}
+            placeholder="Username"
             onChange={this.props.onChange.bind(null, 'username')} />
         </div>
         <div className="row">
           <label>密码</label>
           <input type="password" value={this.props.formData.password}
+            placeholder="Password"
             onChange={this.props.onChange.bind(null, 'password')} />
         </div>
         <div className="row actions">

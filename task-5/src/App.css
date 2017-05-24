@@ -4,20 +4,23 @@
   border-radius: 4px;
   background: #fff;
   height: 100%;
+  width: 100%;
+  min-width: 1024px;
+  max-width: 1440;
   display: flex;
 }
 .App>main {
+  position: relative;
   min-width: 57em;
   max-height: 100vh;
   margin-left: 1em;
   padding-right: 1em;
   flex: 4;
-  overflow: auto;
 }
 .App>main>header {
   display: flex;
   align-items: flex-end;
-  padding: 10px;
+  padding: 15px;
   height: 120px;
   background: #3d74e5;
   font-size: 30px;
@@ -44,6 +47,13 @@
 }
 .App>main>h1>button:hover {
   color: red;
+}
+.App>main> .todoList{
+  width: 100%;
+  max-height: calc(100vh - 172px);
+  position: absolute;
+  top: 172px;
+  overflow: auto;
 }
 .App>main> .todoList> li{
   color: #333;

@@ -2,18 +2,21 @@
   background: rgba(250,250,250,1);
   cursor: pointer;
 }
+.Menu>.row {
+  margin: 5px 8px;
+  padding: 8px 0;
+  font-size: 15px;
+  color: #676767;
+}
 .Menu>header {
-  position: relative;
-  margin: 5px;
   padding: 3px 0;
+  position: relative;
   border-bottom: 1px solid #ccc;
 }
-.Menu>header>i {
-  background: #eee;
-  border-radius: 10px;
+.Menu i {
   margin-right: 8px;
   height: 32px;
-  font-size: 30px;
+  font-size: 24px;
   vertical-align: middle;
 }
 .Menu>header>span {

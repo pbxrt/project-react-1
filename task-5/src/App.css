@@ -49,7 +49,7 @@
   color: red;
 }
 .App>main> .todoList{
-  width: 100%;
+  width: calc(100% - 16px);
   max-height: calc(100vh - 172px);
   position: absolute;
   top: 172px;

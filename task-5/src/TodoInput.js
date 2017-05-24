@@ -9,7 +9,7 @@ function submit(props,e){
 		if(e.target.value.trim() !== ''){
 			props.onSubmit(e)
 		}else {
-			alert('以后会做一个toast')
+			alert('至少告诉我您要干什么哦')
 		}
 	}
 }

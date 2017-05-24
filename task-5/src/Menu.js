@@ -20,11 +20,10 @@ export default class Menu extends Component {
             <div onClick={this.props.onSignOut.bind(null)} className="row logout"><i className="icon iconfont icon-dengchu"></i> 登出</div>
           </div>
         </header>
-        <section className="row"><i className="icon iconfont icon-background"></i> 占位</section>
-        <section className="row"><i className="icon iconfont icon-menu"></i> 占位</section>
-        <section className="row"><i className="icon iconfont icon-todolist"></i> 占位</section>
-        <section className="row"><i className="icon iconfont icon-2"></i> 占位</section>
-        <section className="row"><i className="icon iconfont icon-menu1"></i> 占位</section>
+        <section className="row"><i className="icon iconfont icon-background"></i> 更换背景</section>
+        <section className="row"><i className="icon iconfont icon-todolist"></i> 已完成</section>
+        <section className="row"><i className="icon iconfont icon-2"></i> 未完成</section>
+        <section className="row"><i className="icon iconfont icon-menu1"></i> 项目列表</section>
       </section>
     )
   }

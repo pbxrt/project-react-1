@@ -1,6 +1,12 @@
+# TodoList -v1.2
+[预览](https://younger-peng.github.io/project-react-1/task-5/build/index.html)
+
+- 对已保存项增加再编辑功能
+- 调整页面宽度过小时的样式错乱问题
+
 # TodoList -v1.1
 
-[预览地址](https://younger-peng.github.io/project-react-1/build/index.html)
+[预览](https://younger-peng.github.io/project-react-1/build/index.html)
 
 
 
@@ -22,4 +28,8 @@
 - 对用户的todoItem项增加编辑功能，添加日期排序功能
 - 添加动画功能，更好的用户体验
 
-###### [TodoList -v1.0预览地址](https://younger-peng.github.io/react_projects/build/index.html)
+###### TodoList -v1.0
+
+[预览](https://younger-peng.github.io/react_projects/build/index.html)
+
+- 初始化版本

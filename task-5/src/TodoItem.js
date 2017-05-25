@@ -23,16 +23,16 @@ export default class TodoItem extends Component {
 		this.props.onDelete(e,this.props.todo)
 	}
 	editItem(e){
-		console.log(e.target.innerText)
+		this.props.onEdit(e,this.props.todo)
 	}
 	onSubmit(type,e){
 		if(type === 'keypress'){
 			if(e.key === 'Enter'){
 				e.preventDefault()//阻止换行
-				console.log('nowrap')
+				this.props.onSave()
 			}
 		}else {
-			
+			this.props.onSave()
 		}
 		
 	}

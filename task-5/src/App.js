@@ -27,7 +27,9 @@ class App extends Component {
       return (
         <li key={index} >
           <TodoItem todo={item} onToggle={this.toggle.bind(this)}
-          onDelete={this.delete.bind(this)} />
+            onSave={this.saveEditData.bind(this)}
+            onEdit={this.edit.bind(this)}
+            onDelete={this.delete.bind(this)} />
         </li>
       )
     })
@@ -98,7 +100,6 @@ class App extends Component {
     stateCopy.todoList = []
     this.setState(stateCopy)
   }
-
   delete(event,todo){
     let index = this.state.todoList.indexOf(todo)
     let stateCopy = jsonDeepCopy.call(this)
@@ -111,6 +112,15 @@ class App extends Component {
     let item = stateCopy.todoList[index]
     item.status = item.status === 'completed' ? '' : 'completed'
     this.saveDataToCloud.call(this,stateCopy)
+  }
+  edit(e,todo){
+    let index = this.state.todoList.indexOf(todo)
+    this.state.todoList[index].title = e.target.innerText
+    console.log(this.state.todoList[index].title)
+  }
+  saveEditData(){
+    let stateCopy = jsonDeepCopy.call(this)
+    this.saveDataToCloud.call(this, stateCopy)
   }
   changeTitle(event){
     this.setState({

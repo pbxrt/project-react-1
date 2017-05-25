@@ -12,6 +12,9 @@
 .TodoItem>input~label {
 	outline: none;
 	transition: .2s all ease;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 .TodoItem>input~label>hr {
 	position: relative;

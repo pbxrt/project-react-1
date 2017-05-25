@@ -116,7 +116,6 @@ class App extends Component {
   edit(e,todo){
     let index = this.state.todoList.indexOf(todo)
     this.state.todoList[index].title = e.target.innerText
-    console.log(this.state.todoList[index].title)
   }
   saveEditData(){
     let stateCopy = jsonDeepCopy.call(this)

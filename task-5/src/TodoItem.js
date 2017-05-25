@@ -8,10 +8,10 @@ export default class TodoItem extends Component {
 				<input type="checkbox"  checked={this.props.todo.status === 'completed'}
 				onChange={this.toggle.bind(this)} /> 
 				<label onInput={this.editItem.bind(this)} contentEditable>
-					{this.props.todo.title}
-					<hr/>
+					{this.props.todo.title}					
 				</label>
 				<button className="icon iconfont icon-ic_delete_sweep_24px" onClick={this.delete.bind(this)} ></button>
+				<hr/>
 			</div>
 		)
 	}

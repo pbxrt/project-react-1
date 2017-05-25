@@ -1,5 +1,5 @@
 .TodoItem {
-	
+	position: relative;
 	display: flex;
 	height: 3em;
 	align-items: center;
@@ -27,6 +27,18 @@
 	font-size: 15px;
 	padding: .5em;
 	flex: 1;
+}
+.TodoItem>label~hr {
+	position: absolute;
+	bottom: 0;
+	width: 0;
+	border-width: 0;
+	background: #3d74e5;
+	transition: .3s width ease;
+}
+.TodoItem>label:focus~hr {
+	height: 2px;
+	width: 100%;
 }
 .TodoItem>button {
 	display: none;

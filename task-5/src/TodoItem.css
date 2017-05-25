@@ -28,6 +28,7 @@
 	padding: .5em;
 	white-space: nowrap;
 	flex: 1;
+	cursor: text;
 }
 .TodoItem>label~hr {
 	position: absolute;
@@ -36,12 +37,12 @@
 	left: 50%;
 	transform: translateX(-50%);
 	border-width: 0;
-	height: 1px;
+	height: 2px;
 	background: #ffad1b;
 	transition: .3s width ease;
 }
 .TodoItem>label:focus~hr {
-	height: 1px;
+	height: 2px;
 	width: 100%;
 }
 .TodoItem>button {

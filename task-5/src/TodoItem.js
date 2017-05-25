@@ -7,7 +7,7 @@ export default class TodoItem extends Component {
 			<div className="TodoItem">
 				<input type="checkbox"  checked={this.props.todo.status === 'completed'}
 				onChange={this.toggle.bind(this)} /> 
-				<label contentEditable spellcheck="false" onInput={this.editItem.bind(this)}
+				<label contentEditable spellCheck="false" onInput={this.editItem.bind(this)}
 					onBlur={this.onSubmit.bind(this,'blur')} onKeyPress={this.onSubmit.bind(this,'keypress')} >
 					{this.props.todo.title}					
 				</label>

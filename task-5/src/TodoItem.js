@@ -7,7 +7,10 @@ export default class TodoItem extends Component {
 			<div className="TodoItem">
 				<input type="checkbox"  checked={this.props.todo.status === 'completed'}
 				onChange={this.toggle.bind(this)} /> 
-				<label >{this.props.todo.title}</label>
+				<label onInput={this.editItem.bind(this)} contentEditable>
+					{this.props.todo.title}
+					<hr/>
+				</label>
 				<button className="icon iconfont icon-ic_delete_sweep_24px" onClick={this.delete.bind(this)} ></button>
 			</div>
 		)
@@ -17,5 +20,8 @@ export default class TodoItem extends Component {
 	}
 	delete(e){
 		this.props.onDelete(e,this.props.todo)
+	}
+	editItem(e){
+		console.log(e.target.innerText)
 	}
 }

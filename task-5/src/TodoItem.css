@@ -10,7 +10,12 @@
 	margin-left: 1em;
 }
 .TodoItem>input~label {
+	outline: none;
 	transition: .2s all ease;
+}
+.TodoItem>input~label>hr {
+	position: relative;
+	top: 5px;
 }
 .TodoItem>input:checked~label {
 	color: #777;

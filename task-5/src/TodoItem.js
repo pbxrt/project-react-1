@@ -30,10 +30,18 @@ export default class TodoItem extends Component {
 			if(e.key === 'Enter'){
 				e.preventDefault()//阻止换行
 				this.props.onSave()
+				this.onFocus()
 			}
 		}else {
 			this.props.onSave()
 		}
 		
+	}
+	onFocus(){
+		let todoItems = document.querySelectorAll('label[contenteditable]')
+		console.log(todoItems.length)
+		todoItems.forEach((item) => {
+			item.blur()
+		})
 	}
 }

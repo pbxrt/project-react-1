@@ -26,6 +26,7 @@
 .TodoItem>label {
 	font-size: 15px;
 	padding: .5em;
+	white-space: nowrap;
 	flex: 1;
 }
 .TodoItem>label~hr {
@@ -33,11 +34,11 @@
 	bottom: 0;
 	width: 0;
 	border-width: 0;
-	background: #3d74e5;
-	transition: .3s width ease;
+	background: #ffad1b;
+	transition: .5s width ease;
 }
 .TodoItem>label:focus~hr {
-	height: 2px;
+	height: 1px;
 	width: 100%;
 }
 .TodoItem>button {

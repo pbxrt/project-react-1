@@ -7,7 +7,8 @@ export default class TodoItem extends Component {
 			<div className="TodoItem">
 				<input type="checkbox"  checked={this.props.todo.status === 'completed'}
 				onChange={this.toggle.bind(this)} /> 
-				<label onInput={this.editItem.bind(this)} contentEditable>
+				<label contentEditable onInput={this.editItem.bind(this)}
+					onBlur={this.onSubmit.bind(this,'blur')} onKeyPress={this.onSubmit.bind(this,'keypress')} >
 					{this.props.todo.title}					
 				</label>
 				<button className="icon iconfont icon-ic_delete_sweep_24px" onClick={this.delete.bind(this)} ></button>
@@ -23,5 +24,16 @@ export default class TodoItem extends Component {
 	}
 	editItem(e){
 		console.log(e.target.innerText)
+	}
+	onSubmit(type,e){
+		if(type === 'keypress'){
+			if(e.key === 'Enter'){
+				e.preventDefault()//阻止换行
+				console.log('nowrap')
+			}
+		}else {
+			
+		}
+		
 	}
 }

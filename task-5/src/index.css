@@ -3,12 +3,10 @@
 }
 body {
   background: #ddd;
-  font-family: Arial;
+  font-family: sans-serif;
 }
 
 #root {
-	min-height: 100vh;
+	height: 100vh;
 	background: rgba(250,250,250,1);
-	display: flex;
-	justify-content: center;
 }

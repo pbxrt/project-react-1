@@ -14,15 +14,29 @@ class App extends Component {
     this.state = {
       user: getCurrentUser() || '',
       newTodo: "",
-      todoList:[]
+      todoList:[],
+      show: 'allTodos'
     }
   }
   componentWillMount(){
     this.fetchData.call(this)
   }
   render() {
-     let todos = this.state.todoList
+     let allTodos = this.state.todoList
          .filter((item)=>!item.deleted)
+         .map((item,index)=>{
+      return (
+        <li key={index} >
+          <TodoItem todo={item} onToggle={this.toggle.bind(this)}
+            onSave={this.saveEditData.bind(this)}
+            onEdit={this.edit.bind(this)}
+            onDelete={this.delete.bind(this)} />
+        </li>
+      )
+    })
+
+    let todosDone = this.state.todoList
+         .filter((item)=>!item.deleted && item.status === 'completed')
          .map((item,index)=>{
       return (
         <li key={index} >
@@ -37,6 +51,7 @@ class App extends Component {
     return (
       <div className="App">
         <Menu user={this.state.user}
+        onShowComplete={this.onShowComplete.bind(this)}
           onSignOut={this.signOut.bind(this)} />
         <main>
           <header>
@@ -49,7 +64,14 @@ class App extends Component {
               onSubmit={this.addTodo.bind(this)} />
           </div>
             <ol className="todoList">
-              {todos}
+              {(() => {
+                switch(this.state.show){
+                  case 'todosDone':
+                    return todosDone
+                  default: 
+                  return allTodos
+                }
+              })()}
             </ol>
             {this.state.user ? 
               null : 
@@ -151,6 +173,11 @@ class App extends Component {
     }, function(error){
       console.log(error)
     })
+  }
+  onShowComplete(){
+    let stateCopy = jsonDeepCopy.call(this)
+    stateCopy.show = 'todosDone'
+    this.setState(stateCopy)
   }
 
 }

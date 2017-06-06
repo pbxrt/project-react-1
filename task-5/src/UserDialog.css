@@ -23,7 +23,7 @@
 }
 .UserDialog{
 	position: relative;
-	transform: translateX(30%);
+	transform: translateX(50%);
 	border-radius: 0 4px 4px 0;
 	min-width: 25em;
 	min-height: 24em;

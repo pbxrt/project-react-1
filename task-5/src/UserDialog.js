@@ -106,6 +106,7 @@ export default class UserDialog extends Component{
 		return(
 		<div className="UserDialog-Wrapper">
 			<div className="UserDialog">
+				<div className="left"></div>
 				{this.state.selectedTab === 'signUpOrSignIn' ? 
 				<SignUpOrSignInForm formData={this.state.formData}
 					onSignUp={this.signUp.bind(this)}

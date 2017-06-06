@@ -4,12 +4,13 @@
 	left: 0;
 	bottom: 0;
 	right: 0;
-	color: #fff;
+	color: rgb(64,64,64);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: url(http://i2.muimg.com/588926/f9ae73b848f26e75.jpg) no-repeat center center;
-	background-size: cover;
+	/*background: url(http://i2.muimg.com/588926/f9ae73b848f26e75.jpg) no-repeat center center;*/
+	/*background-size: cover;*/
+	background: #f0f0f0;
 
 }
 
@@ -18,19 +19,26 @@
 	display: block;
 	padding: .5em 0 .2em 0;
 	text-align: center;
-	font-size: 80px;
+	font-size: 50px;
 }
 .UserDialog{
-	border: 1px solid #aaa;
-	border-radius: 4px;
-	min-width: 40em;
-	min-height: 27em;
+	position: relative;
+	transform: translateX(30%);
+	border-radius: 0 4px 4px 0;
+	min-width: 25em;
+	min-height: 24em;
 	font-size: 15px;
-	background: transparent;
-	box-shadow: 0 0 1em hsla(0,0%,0%,.1);
+	background: #fff;
 }
-.UserDialog>.signUpOrSignIn {
-	
+.UserDialog>.left {
+	position: absolute;
+	top: 0;
+	transform: translateX(-100%);
+	width: 400px;
+	height: 100%;
+	border-radius: 4px 0 0 4px;
+	background: url(poster.jpg) no-repeat center center;
+	background-size: cover;
 }
 .UserDialog nav:first-child {
 	padding: 1em;
@@ -77,10 +85,10 @@
 	justify-content: center;
 }
 .UserDialog form>.row.actions button {
-	border: 1px solid white;;
+	border: 1px solid #666;;
 	border-radius: 2px;
 	padding: .2em 5em;
-	color: white;
+	color: #888;
 	background: transparent;
 }
 .UserDialog form>.row.actions button:hover {

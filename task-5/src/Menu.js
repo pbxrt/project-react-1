@@ -17,7 +17,7 @@ export default class Menu extends Component {
           <i className="icon iconfont icon-ic_menu_user_"></i>
           <span>{this.props.user}</span>
           <div className="user-info">
-            <div className="row"><i className="icon iconfont icon-set"></i> 设置</div>
+            <div className="row"  onClick={this.onSet.bind(this)}><i className="icon iconfont icon-set"></i> 设置</div>
             <div onClick={this.props.onSignOut.bind(null)} className="row logout"><i className="icon iconfont icon-dengchu"></i> 登出</div>
           </div>
         </header>
@@ -39,6 +39,9 @@ export default class Menu extends Component {
   }
   onGithub(){
     window.open('https://github.com/Younger-Peng')
+  }
+  onSet(){
+    alert('此功能正在开发中，敬请期待...')
   }
 
 }

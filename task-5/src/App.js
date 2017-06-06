@@ -48,10 +48,25 @@ class App extends Component {
       )
     })
 
+    let todosDoing = this.state.todoList
+         .filter((item)=>!item.deleted && item.status !== 'completed')
+         .map((item,index)=>{
+      return (
+        <li key={index} >
+          <TodoItem todo={item} onToggle={this.toggle.bind(this)}
+            onSave={this.saveEditData.bind(this)}
+            onEdit={this.edit.bind(this)}
+            onDelete={this.delete.bind(this)} />
+        </li>
+      )
+    })
+
     return (
       <div className="App">
         <Menu user={this.state.user}
-        onShowComplete={this.onShowComplete.bind(this)}
+          onShowComplete={this.onShowComplete.bind(this)}
+          onShowDoing={this.onShowDoing.bind(this)}
+          onShowAllTodos={this.onShowAllTodos.bind(this)}
           onSignOut={this.signOut.bind(this)} />
         <main>
           <header>
@@ -59,7 +74,6 @@ class App extends Component {
           </header>
           <div className="inputWrapper">
             <TodoInput content={this.state.newTodo}
-              
               onChange={this.changeTitle.bind(this)}
               onSubmit={this.addTodo.bind(this)} />
           </div>
@@ -68,6 +82,8 @@ class App extends Component {
                 switch(this.state.show){
                   case 'todosDone':
                     return todosDone
+                  case 'todosDoing':
+                    return todosDoing
                   default: 
                   return allTodos
                 }
@@ -177,6 +193,16 @@ class App extends Component {
   onShowComplete(){
     let stateCopy = jsonDeepCopy.call(this)
     stateCopy.show = 'todosDone'
+    this.setState(stateCopy)
+  }
+  onShowDoing(){
+    let stateCopy = jsonDeepCopy.call(this)
+    stateCopy.show = 'todosDoing'
+    this.setState(stateCopy)
+  }
+  onShowAllTodos(){
+    let stateCopy = jsonDeepCopy.call(this)
+    stateCopy.show = 'allTodos'
     this.setState(stateCopy)
   }
 

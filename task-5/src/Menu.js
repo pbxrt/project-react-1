@@ -22,14 +22,19 @@ export default class Menu extends Component {
         </header>
         <section className="row"><i className="icon iconfont icon-background"></i> 更换背景</section>
         <section className="row" onClick={this.onShowComplete.bind(this)}><i className="icon iconfont icon-todolist"></i> 已完成</section>
-        <section className="row"><i className="icon iconfont icon-2"></i> 未完成</section>
-        <section className="row"><i className="icon iconfont icon-menu1"></i> 项目列表</section>
+        <section className="row" onClick={this.onShowDoing.bind(this)}><i className="icon iconfont icon-2"></i> 未完成</section>
+        <section className="row" onClick={this.onShowAllTodos.bind(this)}><i className="icon iconfont icon-menu1"></i> 项目列表</section>
       </section>
     )
   }
   onShowComplete(){
     this.props.onShowComplete()
   }
-  
+  onShowDoing(){
+    this.props.onShowDoing()
+  }
+  onShowAllTodos(){
+    this.props.onShowAllTodos()
+  }
 
 }
